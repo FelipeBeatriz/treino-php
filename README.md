@@ -1,1 +1,1 @@
-# Simples repositório dedicado ao treino da linguagem
+# Simples repositório dedicado ao treino da linguagem (PHP)

@@ -145,3 +145,79 @@ $familiares[] = 'Jorge';
 print_r($familiares);
 */
 
+/*
+********************
+Titular: Vinicius Dias
+Saldo atual: R$ 1000
+*********************
+1. Consultar saldo atual
+2. Sacar valor
+3. Depositar valor
+4. Sair
+*/
+
+$saldo = 1000;
+$continuar = true;
+while ($continuar) {
+   limpar();
+   echo "***********************\n";
+   echo "Titular: Felipe Beatriz\n";
+   echo "Saldo atual: " . "R$ " . $saldo . "\n";
+   echo "***********************\n";
+   echo "1. Consultar saldo atual\n";
+   echo "2. Sacar valor\n";
+   echo "3. Depositar valor\n";
+   echo "4. Sair\n";
+
+   $escolha = (int) readline("Digite sua escolha: ");
+   switch ($escolha) {
+      case 1: {
+         limpar();
+         echo "Saldo atual: " . "R$ " . $saldo . "\n";
+         readline("\nPressione enter para continuar...");
+         break;
+      }
+
+      case 2: {
+         limpar();
+         echo "Saldo atual: R$ " . $saldo . "\n";
+         $valor_saque = (float) readline("Digite o valor a ser sacado: ");
+
+         if ($valor_saque <= 0) {
+            echo "Você não pode sacar esse valor!\n";
+            readline("\nDigite enter para continuar...");
+         } 
+         else if ($valor_saque > $saldo) {
+            echo "Você não pode sacar um valor maior que seu saldo!\n";
+            readline("\nDigite enter para continuar...");
+         } 
+         else {
+            $saldo -= $valor_saque;
+            echo "Saque realizado! Novo saldo: R$ " . $saldo . "\n";
+            readline("\nDigite enter para continuar...");
+         }
+         break;
+      }
+
+      case 3: {
+         limpar();
+         echo "Saldo atual: R$ " . $saldo . "\n";
+         $valor_deposito = (float) readline("Digite o valor a ser depositado: ");
+         if ($valor_deposito > 0) {
+            $saldo += $valor_deposito;
+            echo "Valor depositado! Novo saldo: R$ " . $saldo . "\n";
+         } else {
+            echo "\nVocê não pode depositar esse valor!";
+         }
+         readline("\nDigite enter para continuar...");
+         break;
+      }
+
+      case 4: {
+         limpar();
+         $continuar = false;
+         echo "Terminando o programa.";
+         break;
+      }
+   }
+}
