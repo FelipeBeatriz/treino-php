@@ -157,12 +157,13 @@ Saldo atual: R$ 1000
 */
 
 $saldo = 1000;
+$titular_conta = "Felipe Beatriz";
 $continuar = true;
 while ($continuar) {
    limpar();
    echo "***********************\n";
-   echo "Titular: Felipe Beatriz\n";
-   echo "Saldo atual: " . "R$ " . $saldo . "\n";
+   echo "Titular: $titular_conta\n";
+   echo "Saldo atual: R$ $saldo\n";
    echo "***********************\n";
    echo "1. Consultar saldo atual\n";
    echo "2. Sacar valor\n";
