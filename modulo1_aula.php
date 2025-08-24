@@ -159,6 +159,7 @@ Saldo atual: R$ 1000
 $saldo = 1000;
 $titular_conta = "Felipe Beatriz";
 $continuar = true;
+
 while ($continuar) {
    limpar();
    echo "***********************\n";
@@ -172,14 +173,13 @@ while ($continuar) {
 
    $escolha = (int) readline("Digite sua escolha: ");
    switch ($escolha) {
-      case 1: {
+      case 1:
          limpar();
          echo "Saldo atual: " . "R$ " . $saldo . "\n";
          readline("\nPressione enter para continuar...");
          break;
-      }
 
-      case 2: {
+      case 2:
          limpar();
          echo "Saldo atual: R$ " . $saldo . "\n";
          $valor_saque = (float) readline("Digite o valor a ser sacado: ");
@@ -198,9 +198,8 @@ while ($continuar) {
             readline("\nDigite enter para continuar...");
          }
          break;
-      }
 
-      case 3: {
+      case 3:
          limpar();
          echo "Saldo atual: R$ " . $saldo . "\n";
          $valor_deposito = (float) readline("Digite o valor a ser depositado: ");
@@ -212,13 +211,18 @@ while ($continuar) {
          }
          readline("\nDigite enter para continuar...");
          break;
-      }
 
-      case 4: {
+      case 4:
          limpar();
          $continuar = false;
          echo "Terminando o programa.";
          break;
-      }
+
+      default:
+         echo "Opção inválida! ";
+         readline("Digite enter para continuar...");
+         break;
    }
 }
+
+
